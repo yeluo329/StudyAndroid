@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var activity: MainActivity
     private val TAG = MainActivity::class.java.simpleName
 
+    private var a = 0
+    private var b = 0
+    private var c = 0
+    private var d = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -129,6 +133,8 @@ class MainActivity : AppCompatActivity() {
 
 
         })
+
+
 
     }
 
