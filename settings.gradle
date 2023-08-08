@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "WanAndroid"
 include ':app'
+include ':lib_framework'
+include ':lib_network'
