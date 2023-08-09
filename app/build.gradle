@@ -6,16 +6,15 @@ plugins {
 
 android {
     namespace 'com.example.wanandroid'
-    compileSdk 33
+    compileSdk libs.versions.compileSdk.get().toInteger()
 
     defaultConfig {
         applicationId "com.example.wanandroid"
-        minSdk 23
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
+        versionCode libs.versions.versionCode.get().toInteger()
+        versionName libs.versions.versionName.get().toString()
+        testInstrumentationRunner libs.versions.testInstrumentationRunner.get().toString()
     }
 
 
@@ -35,14 +34,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', includes: ['*jar'])
-
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation libs.bundles.andorid.base
+    implementation libs.bundles.junit
+    implementation libs.bundles.espresso
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
