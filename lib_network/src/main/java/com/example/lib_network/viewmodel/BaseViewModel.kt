@@ -1,9 +1,10 @@
 package com.example.lib_network.viewmodel
 
-import android.view.View
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.lib_network.flow.requestFlow
+
 import com.example.lib_network.response.BaseResponse
 import com.sum.network.callback.IApiErrorCallback
 import kotlinx.coroutines.Dispatchers
@@ -28,6 +29,7 @@ class BaseViewModel : ViewModel() {
 
             }, requestCall, showLoading)
             successBlock(data)
+//        }
         }
     }
 }

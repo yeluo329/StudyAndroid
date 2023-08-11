@@ -1,22 +1,19 @@
 plugins {
-    alias libs.plugins.application
-    alias libs.plugins.kotlin.android
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.example.wanandroid'
+    namespace 'com.example.lib_glide'
     compileSdk libs.versions.compileSdk.get().toInteger()
 
     defaultConfig {
-        applicationId "com.example.wanandroid"
         minSdk libs.versions.minSdk.get().toInteger()
         targetSdk libs.versions.targetSdk.get().toInteger()
-        versionCode libs.versions.versionCode.get().toInteger()
-        versionName libs.versions.versionName.get().toString()
+
         testInstrumentationRunner libs.versions.testInstrumentationRunner.get().toString()
         consumerProguardFiles libs.versions.consumerProguardFiles.get().toString()
     }
-
 
     buildTypes {
         release {
@@ -34,10 +31,10 @@ android {
 }
 
 dependencies {
+
     implementation libs.bundles.andorid.base
     implementation libs.bundles.junit
     implementation libs.bundles.espresso
     implementation libs.bundles.glide
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    annotationProcessor libs.bundles.glide.compiler
 }
